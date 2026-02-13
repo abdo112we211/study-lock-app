@@ -15,9 +15,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
             position: relative;
             overflow-x: hidden;
@@ -53,6 +50,97 @@
         @keyframes slideIn {
             from { transform: translateY(30px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
+        }
+
+
+        /* School Header Section */
+        .school-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 2px solid rgba(138, 43, 226, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 0 auto 30px;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+
+        .school-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #FFD700 0%, #FFA500 100%);
+        }
+
+        .school-logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .school-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .school-info h2 {
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .school-info p {
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        .group-members {
+            text-align: right;
+        }
+
+        .group-members h3 {
+            font-size: 0.95rem;
+            color: #a78bfa;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .member-name {
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            margin: 4px 0;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            .school-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .school-logo-section {
+                flex-direction: column;
+            }
+
+            .group-members {
+                text-align: center;
+            }
         }
 
         h1 {
@@ -559,7 +647,27 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- School Header Section -->
+    <div class="school-header">
+        <div class="school-logo-section">
+            <img src="download.png" alt="Smart Vision International School" class="school-logo">
+            <div class="school-info">
+                <h2>Smart Vision International School</h2>
+                <p>Data Visualization Project</p>
+            </div>
+        </div>
+        <div class="group-members">
+            <h3>Project Team</h3>
+            <div class="member-name">Kareem Yasser</div>
+            <div class="member-name">Hamza Ahmed</div>
+            <div class="member-name">Abdelrhman Wael</div>
+            <div class="member-name">Omar Ahmed</div>
+        </div>
+    </div>
+
+
+    <div style="display: flex; justify-content: center; align-items: center; min-height: calc(100vh - 200px);">
+        <div class="container">
         <div class="app-icon">📚</div>
         <h1>Study Lock</h1>
         <p class="subtitle">Focus on learning, unlock with knowledge! Build better study habits one session at a time.</p>
@@ -1552,5 +1660,7 @@
             loadStats(); // Reload stats to show updated values
         }
     </script>
+        </div>
+    </div>
 </body>
 </html>
